@@ -1,0 +1,18 @@
+/system		ext4	/dev/block/platform/11120000.ufs/by-name/SYSTEM
+/data		ext4	/dev/block/platform/11120000.ufs/by-name/USERDATA	flags=length=-20480,encryptable=footer
+/cache		ext4	/dev/block/platform/11120000.ufs/by-name/CACHE
+/preload	ext4	/dev/block/platform/11120000.ufs/by-name/HIDDEN	flags=backup=1;display="Preload"
+
+/boot		emmc	/dev/block/platform/11120000.ufs/by-name/BOOT	flags=backup=1;display="Kernel"
+/recovery	emmc	/dev/block/platform/11120000.ufs/by-name/RECOVERY	flags=backup=1;display="Recovery"
+
+/modem		emmc	/dev/block/platform/11120000.ufs/by-name/RADIO	flags=backup=1;display="Baseband"
+/efs		ext4	/dev/block/platform/11120000.ufs/by-name/EFS	flags=backup=1;display="EFS"
+/cpefs		ext4	/dev/block/platform/11120000.ufs/by-name/CPEFS	flags=backup=1;display="CPEFS"
+
+/misc		emmc	/dev/block/platform/11120000.ufs/by-name/MISC	flags=backup=0;display="Misc"
+/vendor		ext4	/dev/block/platform/11120000.ufs/by-name/VENDOR	flags=backup=1;display="Vendor"
+/odm		ext4	/dev/block/platform/11120000.ufs/by-name/ODM	flags=backup=1;display="ODM"
+
+/external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0	flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg	vfat	/dev/block/sde1 /dev/block/sde		flags=display="USB-OTG";storage;wipeingui;removable
