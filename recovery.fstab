@@ -9,7 +9,6 @@
 
 /modem		emmc	/dev/block/platform/11120000.ufs/by-name/RADIO	flags=backup=1;display="Baseband"
 /efs		ext4	/dev/block/platform/11120000.ufs/by-name/EFS	flags=backup=1;display="EFS"
-/cpefs		ext4	/dev/block/platform/11120000.ufs/by-name/CPEFS	flags=backup=1;display="CPEFS"
 
 /misc		emmc	/dev/block/platform/11120000.ufs/by-name/MISC	flags=backup=0;display="Misc"
 /vendor		ext4	/dev/block/platform/11120000.ufs/by-name/VENDOR
