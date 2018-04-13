@@ -23,7 +23,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 # Kernel
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CONFIG := exynos9810-star2lte_eur_defconfig
+TARGET_KERNEL_CONFIG := exynos9810-star2lte_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/universal9810
 
 # Image
