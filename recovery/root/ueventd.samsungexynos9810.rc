@@ -49,7 +49,7 @@
 /dev/video31              0660   media      graphics
 
 # mscalers
-/dev/video50              0660   media      graphics
+/dev/video50              0660   mediacodec      drmrpc
 /dev/m2m1shot_scaler0     0660   mediacodec      drmrpc
 
 /dev/video55              0666   system     graphics
@@ -59,8 +59,8 @@
 /dev/HPD                  0660   system     system
 
 # wfd
-/dev/tsmux                0660   oem_5386 graphics
-/dev/repeater             0660   oem_5386 graphics
+/dev/tsmux                0660   oem_5386      graphics
+/dev/repeater             0660   oem_5386      graphics
 
 # mfc
 /dev/video6               0660   mediacodec mediadrm
@@ -136,25 +136,72 @@
 # audio
 /dev/seiren               0660   system     audio
 
+# Mobicore
+/dev/mobicore             0700   system     system
+/dev/mobicore-user        0666   radio      system
+
+# Secure MEM driver
+/dev/s5p-smem             0660   system     system
+
 #temporary
 /data/modem.bin           0400   radio      system
 
+# DM tools
+/dev/umts_dm0             0660   radio      radio
+/dev/umts_router          0660   radio      radio
+
 # Modem Interface
+/dev/block/platform/11120000.ufs/by-name/radio	0660   system     radio
+/dev/block/platform/11120000.ufs/by-name/cp_debug	0660	radio	system
 /dev/block/platform/11120000.ufs/by-name/RADIO	0660   system     radio
 /dev/block/platform/11120000.ufs/by-name/CP_DEBUG	0660	radio	system
+/sys/devices/platform/10000.mif_pdata	sim/ds_detect	0660	radio	system
 /dev/umts*                0660   system     radio
 /dev/umts_csd             0660   system     loop_radio
 /dev/smd4                 0660   system     radio
 /dev/ramdump_memshare     0660   system     radio
 
 # dev ril bridge
-/sys/class/dev_ril_bridge/dev_ril_bridge    notify      0660    system  radio
+/dev/drb	          0660   system     radio
+
+# FRP
+/dev/block/platform/11120000.ufs/by-name/frp    0660   root      system
+
+# interactive governor parameters
+/sys/devices/system/cpu/cpu*	cpufreq/interactive/timer_rate			0660	system	system
+/sys/devices/system/cpu/cpu*	cpufreq/interactive/timer_slack			0660	system	system
+/sys/devices/system/cpu/cpu*	cpufreq/interactive/min_sample_time		0660	system	system
+/sys/devices/system/cpu/cpu*	cpufreq/interactive/hispeed_freq		0660	system	system
+/sys/devices/system/cpu/cpu*	cpufreq/interactive/target_loads		0660	system	system
+/sys/devices/system/cpu/cpu*	cpufreq/interactive/go_hispeed_load		0660	system	system
+/sys/devices/system/cpu/cpu*	cpufreq/interactive/above_hispeed_delay		0660	system	system
+/sys/devices/system/cpu/cpu*	cpufreq/interactive/boost			0660	system	system
+/sys/devices/system/cpu/cpu*	cpufreq/interactive/boostpulse			0200	system	system
+/sys/devices/system/cpu/cpu*	cpufreq/interactive/input_boost			0660	system	system
+/sys/devices/system/cpu/cpu*	cpufreq/interactive/boostpulse_duration		0660	system	system
+/sys/devices/system/cpu/cpu*	cpufreq/interactive/io_is_busy			0660	system	system
 
 # Vision (VPU, SCORE)
-/dev/vertex0              0660   media      media
-/dev/vertex1              0660   media      media
-/dev/iva_ctl              0660   cameraserver   camera
-/dev/score                0660   cameraserver   camera
+/dev/vertex0             0660   media      media
+/dev/vertex1             0660   media      media
+
+# Voice Trigger Sound (VTS Misc)
+/dev/vts_fio_dev         0660   audioserver   system
+
+/dev/iva_ctl             0660   cameraserver   camera
+/dev/score               0660   cameraserver   camera
+
+# Google FRP solution
+/dev/block/platform/11120000.ufs/by-name/PERSISTENT    0660    system    system
+
+# Reactivation lock
+/dev/block/platform/11120000.ufs/by-name/STEADY    0660    system    system
+
+# Google FRP solution
+/dev/block/platform/11120000.ufs/by-name/persistent    0660    system    system
+
+# Reactivation lock
+/dev/block/platform/11120000.ufs/by-name/steady    0660    system    system
 
 # sensor sysfs properties
 /sys/devices/virtual/input/input*    poll_delay    0660    system    radio
@@ -162,6 +209,7 @@
 /dev/input/event*	  0660   system		input
 
 # Sensorhub IIO
+/dev/ssp_data_injection        0660   system		system
 /dev/ssp_sensorhub        0660   system		system
 /dev/batch_io		  0600   system         system
 /dev/iio:device*          0660   system		system
@@ -178,16 +226,3 @@
 /dev/bbd_sio              0660   system     system
 /dev/bbd_patch            0660   system     system
 /dev/ttyBCM*              0660   system     system
-
-# CIP
-/dev/cip1                 0660   cameraserver   camera
-/dev/cip2                 0660   cameraserver   camera
-
-# Google FRP solution
-/dev/block/platform/11120000.ufs/by-name/PERSISTENT    0660    system    system
-
-# Reactivation lock
-/dev/block/platform/11120000.ufs/by-name/STEADY    0660    system    system
-
-# ASTC HW encoder
-/dev/astc                 0644   root       root
