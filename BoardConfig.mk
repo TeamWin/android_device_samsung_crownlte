@@ -25,11 +25,11 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 # Kernel
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CONFIG := exynos9810-star2lte_defconfig
+TARGET_KERNEL_CONFIG := exynos9810-crownlte_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/universal9810
 
 # Image
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/star2lte/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/crownlte/mkbootimg.mk
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_BASE := 0x10000000
@@ -62,4 +62,4 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
 
 # Include
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/star2lte/include
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/crownlte/include

@@ -11,7 +11,7 @@
 /dev/block/platform/11120000.ufs/by-name/MISC           /misc       emmc    defaults                                                                                      defaults
 #/dev/block/platform/11120000.ufs/by-name/DQMDBG        /dqmdbg     ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic       wait,check
 
-# VOLD - fstab.star2lte
+# VOLD - fstab.crownlte
 /dev/block/platform/11120000.ufs/by-name/HIDDEN	/preload	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	voldmanaged=preload:auto,check
 /devices/platform/11500000.dwmmc2/mmc_host*             auto        vfat    defaults    voldmanaged=sdcard:auto
 /devices/platform/10c00000.usb/10c00000.dwc3*           auto        auto    defaults    voldmanaged=usb:auto

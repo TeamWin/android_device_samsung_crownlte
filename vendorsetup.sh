@@ -1,2 +1,2 @@
-add_lunch_combo omni_star2lte-eng
+add_lunch_combo omni_crownlte-eng
 
