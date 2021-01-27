@@ -1,4 +1,5 @@
 # Platform
+DEVICE_PATH := device/samsung/crownlte
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_BOARD_PLATFORM_GPU := mali-g72
@@ -22,21 +23,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-# Kernel
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CONFIG := exynos9810-crownlte_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/universal9810
-
-# Image
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/crownlte/mkbootimg.mk
-BOARD_KERNEL_IMAGE_NAME := Image
-BOARD_KERNEL_SEPARATED_DT := true
-BOARD_KERNEL_BASE := 0x10000000
-BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --board SRPQH16A001RU
-TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
-
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -44,7 +30,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HAS_NO_REAL_SDCARD := true
 
 # TWRP specific build flags
-TW_FORCE_USE_BUSYBOX := true
 RECOVERY_VARIANT := twrp
 ALLOW_MISSING_DEPENDENCIES=true
 TW_THEME := portrait_hdpi
@@ -62,6 +47,12 @@ TW_USE_NEW_MINADBD := true
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
 
+# Kernel
+BOARD_KERNEL_BASE := 0x10000000
+BOARD_KERNEL_PAGESIZE := 2048
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/kernel
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt $(DEVICE_PATH)/dtb
+
 # Include
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/crownlte/include
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
